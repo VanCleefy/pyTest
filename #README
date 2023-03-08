@@ -1,0 +1,101 @@
+# Django is a Python framework that makes it easier to create web sites using Python.
+
+# Django takes care of the difficult stuff so that you can concentrate on building your web applications.
+
+# Django emphasizes reusability of components, also referred to as DRY (Don't Repeat Yourself), and comes with ready-to-use features like login system, database connection and CRUD operations (Create Read Update Delete).
+
+# Django follows the MVT design pattern (Model View Template).
+
+#     Model - The data you want to present, usually data from a database.
+#     View - A request handler that returns the relevant template and content - based on the request from the user.
+#     Template - A text file (like an HTML file) containing the layout of the web page, with logic on how to display the data.
+
+# =======================================================================
+# When you have installed Django and created your first Django web application, and the browser requests the URL, this is basically what happens:
+
+#     Django receives the URL, checks the urls.py file, and calls the view that matches the URL.
+#     The view, located in views.py, checks for relevant models.
+#     The models are imported from the models.py file.
+#     The view then sends the data to a specified template in the template folder.
+#     The template contains HTML and Django tags, and with the data it returns finished HTML content back to the browser.
+
+# =======================================================================
+# It is suggested to have a dedicated virtual environment for each Django project, and one way to manage a virtual environment is venv, which is included in Python.
+
+    # sudo apt install pyton3.8-venv
+    # python3 -m venv pythonTest
+    # source pythonTest/bin/activate
+
+# =======================================================================
+# Install Django and start a new project plus app
+
+    # python3 -m pip install Django
+
+    # django-admin startproject pythonTest
+    # cd pythonTest
+    # python3 manage.py runserver
+# =======================================================================
+# An app is a web application that has a specific meaning in your project, like a home page, a contact form, or a members database.
+
+# In this tutorial we will create an app that allows us to list and register members in a database.
+
+# But first, let's just create a simple Django app that displays "Hello World!".
+# Create App
+
+# I will name my app members.
+
+# Start by navigating to the selected location where you want to store the app, in my case the my_tennis_club folder, and run the command below.
+
+# If the server is still running, and you are not able to write commands, press [CTRL] [BREAK], or [CTRL] [C] to stop the server and you should be back in the virtual environment.
+python3 manage.py startapp members
+
+# Django creates a folder named members in my project, with this content:
+# my_tennis_club
+#     manage.py
+#     my_tennis_club/
+#     members/
+#         migrations/
+#             __init__.py
+#         __init__.py
+#         admin.py
+#         apps.py
+#         models.py
+#         tests.py
+#         views.py
+
+# These are all files and folders with a specific meaning. You will learn about most of them later in this tutorial.
+
+# First, take a look at the file called views.py.
+
+# This is where we gather the information we need to send back a proper response.
+
+# You will learn more about views in the next chapter.
+
+# =======================================================================
+# Django views are Python functions that takes http requests and returns http response, like HTML documents.
+
+# A web page that uses Django is full of views with different tasks and missions.
+
+# Views are usually put in a file called views.py located on your app's folder.
+
+# There is a views.py in your members folder that looks like this:
+
+# my_tennis_club/members/views.py:
+
+from django.shortcuts import render
+
+# Create your views here.
+
+# Find it and open it, and replace the content with this:
+
+# my_tennis_club/members/views.py:
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def members(request):
+return HttpResponse("Hello world!")
+
+# =======================================================================
+
+=======================================================================
